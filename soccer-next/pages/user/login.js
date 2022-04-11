@@ -25,7 +25,7 @@ export default function SignIn(){
     <label htmlFor="">Pw</label><br />
     <input type="text" name="pw" onChange={handleChange}/><br/>
     <label htmlFor="">성함</label><br />
-    <input type="text" name="name" onChange={handleChange}/>
+    <input type="text" name="name" onChange={handleChange}/><br/>
     <button onClick={handleClick}>입력</button><br/><br/>
     <button onClick={ () => {history.back('/'); } } >뒤로가기</button>
     </>

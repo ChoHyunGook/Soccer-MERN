@@ -29,8 +29,12 @@ export default function Rps(){
     <form action="" onSubmit={handleSubmit}>
         <h1>가위바위보 게임</h1>
         <>
-        <label htmlFor=""><h3>가위:0 바위:1 보:2</h3></label><br />
-        <input type="text" name="user" onChange={handleChange}/><br/><br/>
+        <select name="user" onChange={handleChange}>
+            <option value="select">선택</option>
+            <option value="0">가위(0)</option>
+            <option value="1">바위(1)</option>
+            <option value="2">보(2)</option>
+        </select><br /><br/>
         <input type="submit" value="실행"/><br/><br/>
         </>
     </form>

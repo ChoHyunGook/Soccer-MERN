@@ -1,5 +1,6 @@
 import axios from "axios";
 import style from "user/style/userlist.module.css";
+import Link from 'next/link'
 import { useEffect, useState } from "react";
 
 const Table = ({ columns, colspan, data}) => {
@@ -18,12 +19,20 @@ const Table = ({ columns, colspan, data}) => {
                                     <td colSpan={colspan} className={style.td}>데이터가없습니다</td>
                                     </tr>
                 :data.map((user)=>(
-                <tr className={style.tr} key={user.username}>
-                    <td className={style.td}>{user.username}</td>
-                    <td className={style.td}>{user.password}</td>
-                    <td className={style.td}>{user.name}</td>
-                    <td className={style.td}>{user.telephone}</td>
-                    </tr>
+                    <tr className={style.tr}  key={user.username} >
+                  <td className={style.td}>
+                    <Link href={{pathname:`/user/[username]`,
+                                query:{selectedUser: 'test'}}} as={`/user/${user.username}`}>
+                      <a>{user.username}</a>
+                
+                    </Link>
+                    
+                  </td>
+                  <td className={style.td}>{user.password}</td>
+                  <td className={style.td}>{user.name}</td>
+                  <td className={style.td}>{user.telephone}</td>
+                </tr>
+                
                 ))}
 
         </tbody>
@@ -42,7 +51,7 @@ export default function UserList(){
         <h1>회원목록</h1>
         <div className={style.td}> 
         <Table columns={columns} colspan={4} data = {data}/>
-        </div>
+        </div><br/>
         <button onClick={ () => {history.back('/'); } } >뒤로가기</button>
         </>
     ) 

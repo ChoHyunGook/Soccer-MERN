@@ -39,9 +39,9 @@ export default function SignUp(){
         <label><b>전화번호</b></label><br/>
         <input type="text" name='telephone' onChange={handleChange}/><br /><br/>
     </div>
-    <button >회원가입</button>  
+    <button >회원가입</button><br/><br/>
     </form>
-    <button onClick={ () => {history.back('/'); } } >뒤로가기</button>
-    <div><span id="result-span">결과</span></div>
+    <button onClick={ () => {history.back('/'); } } >뒤로가기</button><br/>
+    <div><span id="result-span">결과 :</span></div>
     </div>)}
     
